@@ -13,11 +13,11 @@ class EmojiTableTableViewController: UITableViewController {
         Emoji(symbol: "😀", name: "Grinning Face", description: "A typical smiley face.", usage: "happiness"),
         Emoji(symbol: "😕", name: "Confused Face", description: "A onfused, puzzled face.", usage: "displeasure"),
         Emoji(symbol: "😍", name: "Heart Eyes", description: "A smileyface with hearts for eyes.", usage: "Attractive"),
-        Emoji(symbol: "🐢", name: "Turtle", description: "A cute turtle.",        usage: "something slow"),
+        Emoji(symbol: "🐢", name: "Turtle", description: "A cute turtle.", usage: "something slow"),
         Emoji(symbol: "🐘", name: "Elephant", description: "A gray elephant.", usage: "good memory"),
         Emoji(symbol: "🍝", name: "Spaghetti", description: "A plate of spaghetti.", usage: "spaghetti"),
-        Emoji(symbol: "🎲", name: "Die", description: "A single die.",        usage: "taking a risk, chance; game"),
-        Emoji(symbol: "⛺️", name: "Tent", description: "A small tent.",        usage: "camping"),
+        Emoji(symbol: "🎲", name: "Die", description: "A single die.", usage: "taking a risk, chance; game"),
+        Emoji(symbol: "⛺️", name: "Tent", description: "A small tent.", usage: "camping"),
         Emoji(symbol: "📚", name: "Stack of Books", description: "Three colored books stacked on each other.", usage: "learning"),
         Emoji(symbol: "💔", name: "Broken Heart", description: "A red, broken heart", usage: "extreme sadness")
     ]
@@ -25,6 +25,12 @@ class EmojiTableTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = editButtonItem
+        
+        if let savedEmojis = Emoji.loadFromFile() {
+                emojis = savedEmojis
+            } else {
+                emojis = Emoji.sampleEmojis()
+            }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -108,7 +114,8 @@ class EmojiTableTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
+        Emoji.saveTofile(emojis: emojis)
     }
     
 
@@ -134,6 +141,8 @@ class EmojiTableTableViewController: UITableViewController {
             emojis.append(emoji)
             tableView.insertRows(at: [newIndexPath], with: .automatic)
         }
+     
+        Emoji.saveTofile(emojis: emojis)
     }
     
 
