@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		780BD3C72DFEBC3C00AD2802 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780BD3C62DFEBC3C00AD2802 /* Emoji.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		780BD3A92DFEBC1A00AD2802 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		780BD3922DFEBC1800AD2802 /* EmojiDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		780BD3A82DFEBC1A00AD2802 /* EmojiDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		780BD3B22DFEBC1A00AD2802 /* EmojiDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		780BD3C62DFEBC3C00AD2802 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -88,6 +93,7 @@
 		780BD3892DFEBC1800AD2802 = {
 			isa = PBXGroup;
 			children = (
+				780BD3C62DFEBC3C00AD2802 /* Emoji.swift */,
 				780BD3942DFEBC1800AD2802 /* EmojiDictionary */,
 				780BD3AB2DFEBC1A00AD2802 /* EmojiDictionaryTests */,
 				780BD3B52DFEBC1A00AD2802 /* EmojiDictionaryUITests */,
@@ -249,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				780BD3C72DFEBC3C00AD2802 /* Emoji.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
